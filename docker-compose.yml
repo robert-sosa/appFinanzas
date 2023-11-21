@@ -6,6 +6,9 @@ services:
       - .:/var/www/html
     ports:
       - "80:80"
+    networks:
+      - laravel_network  
+
   database:
     image: mysql:5.7
     environment:
@@ -15,6 +18,9 @@ services:
       MYSQL_PASSWORD: Finanzas1848
     ports:
       - "3306:3306"
+    networks:
+      - laravel_network  
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
@@ -22,3 +28,21 @@ services:
       PMA_PORT: 3306
     ports:
       - "8081:80"
+    networks:
+      - laravel_network  
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    networks:
+      - laravel_network  
+
+volumes:
+  jenkins_home:
+
+networks:
+  laravel_network:       
