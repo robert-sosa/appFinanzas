@@ -5,28 +5,10 @@ body {
     padding: 0;
 }
 
-.navbar-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-.user-info {
-    display: flex;
-    align-items: center;
-}
 
-.container-fluid {
-    padding: 0;
-}
 
-.navbar {
-    padding: 10px 0;
-}
 
-.logo {
-    height: 50px; /* Ajusta la altura según tus necesidades */
-}
 
 /* Agrega otros estilos según sea necesario */
 .info-box {
