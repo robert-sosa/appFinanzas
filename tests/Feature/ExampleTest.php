@@ -16,6 +16,7 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertStatus(302) // Espera una redirección
+             ->assertRedirect('/login'); // Reemplaza '/ruta-esperada' con la ruta a la que se redirige
     }
 }
