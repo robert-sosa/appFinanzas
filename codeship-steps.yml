@@ -1,3 +1,4 @@
 - name: Run tests
   service: app
   command: php artisan test
+  
