@@ -2,7 +2,3 @@ language: php
 
 php:
   - 8.0
-
-script:
-  - php artisan key:generate
-  - php artisan migrate
