@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'php:8.0-cli'
+            image 'php:8.2-cli'
         }
     }
 
