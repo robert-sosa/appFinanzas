@@ -1,20 +1,25 @@
 pipeline {
-    agent {
-        docker {
-            image 'php:8.2-cli'
-        }
-    }
+    agent any
 
     stages {
         stage('Build') {
             steps {
-                sh 'composer install'
+                // Puedes agregar aquí cualquier paso necesario antes de ejecutar las pruebas
+                script {
+                    echo 'Building...'
+                    // Agrega comandos adicionales si es necesario
+                    php artisan test   
+                }
             }
         }
 
         stage('Test') {
             steps {
-                sh 'php vendor/bin/phpunit'
+                script {
+                    echo 'Running PHPUnit tests...'
+                    sh 'composer install'
+                    sh 'php vendor/bin/phpunit'
+                }
             }
         }
     }
